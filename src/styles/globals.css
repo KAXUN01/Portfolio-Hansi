@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy-900: #172b4d;
+  --color-navy-700: #21466d;
+  --color-navy-500: #31577a;
+  --color-ivory-50: #f7f3ea;
+  --color-ivory-100: #efe6d8;
+  --color-terra-500: #a65335;
+  --color-terra-400: #c57a5b;
+  --color-charcoal: #18202a;
+  --color-muted: #667085;
+  --color-line: rgba(23, 43, 77, 0.15);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --shadow-soft: 0 20px 45px rgba(23, 43, 77, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: #fcfaf8;
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  color: var(--color-navy-900);
+}
+
+p {
+  color: var(--color-charcoal);
+}
+
+::selection {
+  background: rgba(166, 83, 53, 0.18);
+}
+
+:focus {
+  outline: none;
+}
+
+.focus-ring:focus,
+.focus-visible:focus {
+  box-shadow: 0 0 0 3px rgba(49, 87, 122, 0.12), 0 0 0 1px rgba(49, 87, 122, 0.22);
+  border-radius: 0.5rem;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section-shell {
+  border-top: 1px solid var(--color-line);
+}
+
+.eyebrow--caps {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.editorial-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.image-arch {
+  border-radius: 2rem 2rem 0 0;
+  overflow: hidden;
+}
+
+.soft-divider {
+  height: 1px;
+  background: var(--color-line);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
