@@ -119,7 +119,7 @@ export default function Hero() {
             transition={prefersReducedMotion ? undefined : { duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
             className="absolute -bottom-4 left-5 rounded-full border border-[var(--color-line)] bg-[rgba(247,243,234,0.9)] px-4 py-2 shadow-[0_18px_40px_rgba(23,43,77,0.08)] backdrop-blur-sm"
           >
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-navy-500)]">Python • R • SQL</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-navy-500)]">Hansi Thennakoon</span>
           </motion.div>
         </motion.div>
       </div>
