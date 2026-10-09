@@ -21,7 +21,7 @@ export default function About() {
       <SectionHeading
         number={1}
         title="About"
-        subtitle="Business Analytics undergraduate building practical skills in analysis, business intelligence, and decision support."
+        subtitle="Building practical skills in analysis, business intelligence, and decision support."
       />
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
@@ -40,10 +40,10 @@ export default function About() {
         <div className="space-y-6">
           <div className="space-y-4">
             <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-navy-500)]">
-              Business Analytics Undergraduate
+              Analytical lens
             </p>
             <p className="text-lg leading-8 text-[var(--color-charcoal)]">
-              I am a Business Analytics undergraduate with a strong interest in data analysis, business intelligence, and data-driven decision-making. My academic journey has helped me build practical skills in Python, R, Microsoft Excel, Tableau, and statistical analysis, and I am continuously developing my ability to turn raw data into clear, actionable business insight.
+              I am an undergraduate student with a strong interest in data analysis, business intelligence, and data-driven decision-making. My academic journey has helped me build practical skills in Python, R, Microsoft Excel, Tableau, and statistical analysis, and I am continuously developing my ability to turn raw data into clear, actionable business insight.
             </p>
             <p className="text-lg leading-8 text-[var(--color-charcoal)]">
               I enjoy working with analytical problems, understanding patterns in data, and using business context to support better decisions. Through academic projects and structured learning, I am developing the technical and analytical foundation needed to contribute to an internship opportunity where I can apply and strengthen these skills.

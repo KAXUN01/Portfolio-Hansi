@@ -29,9 +29,6 @@ export default function SectionHeading({
 
       <div className="flex items-center gap-4 md:justify-end">
         <span className="soft-divider w-14" />
-        <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-navy-500)]">
-          Business Analytics
-        </p>
       </div>
     </div>
   )

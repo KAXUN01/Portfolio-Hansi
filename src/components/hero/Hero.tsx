@@ -27,7 +27,7 @@ export default function Hero() {
           transition={textTransition}
           className="max-w-[680px]"
         >
-          <Eyebrow>Business Analytics</Eyebrow>
+          <Eyebrow>Data-driven thinking</Eyebrow>
 
           <motion.h1
             initial={textInitial}
@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ ...textTransition, delay: prefersReducedMotion ? 0 : 0.14 }}
             className="mt-6 max-w-xl text-base leading-7 text-[var(--color-charcoal)]/90 sm:text-lg"
           >
-            Business Analytics undergraduate developing practical skills in Python, R, SQL, Tableau, Power BI and statistical analysis.
+            I develop practical skills in Python, R, SQL, Tableau, Power BI and statistical analysis to turn data into clearer business decisions.
           </motion.p>
 
           <motion.div

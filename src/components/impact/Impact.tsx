@@ -37,7 +37,7 @@ export default function Impact() {
           </p>
 
           <p className="mt-6 max-w-md font-display text-3xl leading-tight text-[var(--color-navy-900)] sm:text-4xl">
-            “Business analytics is not only about numbers — it is also about understanding people, systems and opportunities.”
+            “Data is not only about numbers — it is also about understanding people, systems and opportunities.”
           </p>
 
           <div className="mt-8 rounded-[1.5rem] border border-[var(--color-line)] bg-white/70 p-4">

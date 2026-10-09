@@ -5,7 +5,7 @@ import Tag from '../ui/Tag'
 
 const skillGroups = [
   {
-    title: 'Data & Analytics',
+    title: 'Data',
     items: ['Python', 'R', 'RStudio', 'SQL', 'Statistical Analysis']
   },
   {
@@ -41,7 +41,7 @@ export default function Skills() {
     <SectionWrapper id="skills" className="bg-[var(--color-ivory-50)]">
       <SectionHeading
         number={3}
-        title="Analytics Toolkit"
+        title="Toolkit"
         subtitle="A concise toolkit shaped around analysis, visualization, business thinking, and collaborative problem solving."
       />
 
