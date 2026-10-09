@@ -1,6 +1,5 @@
 import React from 'react'
 import { ArrowRight, ArrowUpRight, Mail, Phone } from 'lucide-react'
-import SectionHeading from '../ui/SectionHeading'
 import { siteData } from '../../lib/data'
 import SectionWrapper from '../layout/SectionWrapper'
 import Button from '../ui/Button'
@@ -11,11 +10,28 @@ export default function Contact() {
       <div className="editorial-card rounded-[2rem] p-6 sm:p-8 lg:p-10">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <SectionHeading
-              number={6}
-              title="Let's talk about data, ideas & opportunities."
-              subtitle="Open to internships, analytics projects and business-focused roles where thoughtful analysis can help teams make better decisions."
-            />
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.6)] text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-navy-700)]">
+                    06
+                  </span>
+                  <span className="soft-divider w-10" />
+                </div>
+
+                <h2 className="mt-4 text-[clamp(2.8rem,5vw,5.2rem)] leading-[0.9] tracking-[-0.06em] text-[var(--color-navy-900)]">
+                  Let&apos;s talk about ideas <span className="text-[var(--color-navy-900)]">&amp;</span> opportunities.
+                </h2>
+
+                <p className="mt-4 max-w-xl text-base text-[var(--color-muted)]">
+                  Open to projects and business-focused roles where thoughtful analysis can help teams make better decisions.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 md:justify-end">
+                <span className="soft-divider w-14" />
+              </div>
+            </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-[1.25rem] border border-[var(--color-line)] bg-white/80 p-4">

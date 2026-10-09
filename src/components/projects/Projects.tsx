@@ -13,7 +13,7 @@ export default function Projects() {
         subtitle="A collection of analytical projects exploring data, business performance, visualization and decision-making."
       />
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {siteData.projects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -26,6 +26,7 @@ export default function Projects() {
             visual={project.visual}
             featured={project.featured}
             href={project.href}
+            image={project.image}
           />
         ))}
       </div>

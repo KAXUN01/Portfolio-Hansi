@@ -1,9 +1,18 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import ProjectVisual from './ProjectVisual'
+
+type ProjectImage = {
+  src: string
+  alt: string
+  width: number
+  height: number
+  objectPosition?: string
+}
 
 type ProjectCardProps = {
   number: string
@@ -15,6 +24,7 @@ type ProjectCardProps = {
   visual?: 'trend' | 'distribution' | 'performance' | 'dashboard' | 'energy' | 'community'
   featured?: boolean
   href?: string
+  image?: ProjectImage
 }
 
 const visualMap = {
@@ -35,10 +45,10 @@ export default function ProjectCard({
   period,
   visual = 'trend',
   featured = false,
-  href
+  href,
+  image
 }: ProjectCardProps) {
   const currentVisual = visualMap[visual]
-  const cardSize = featured ? 'lg:col-span-2' : ''
   const prefersReducedMotion = useReducedMotion()
 
   return (
@@ -48,9 +58,9 @@ export default function ProjectCard({
       viewport={{ once: true, amount: 0.2 }}
       transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       whileHover={prefersReducedMotion ? undefined : { y: -4 }}
-      className={`group min-w-0 overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-shadow duration-200 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)] ${cardSize}`}
+      className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-shadow duration-200 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)]"
     >
-      <div className={`relative p-5 sm:p-6 ${featured ? 'sm:p-7' : ''}`}>
+      <div className={`relative flex h-full flex-col p-5 ${featured ? 'sm:p-7' : 'sm:p-6'}`}>
         <div className="flex items-center justify-between gap-4">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-navy-500)]">
             {number}
@@ -69,8 +79,23 @@ export default function ProjectCard({
           transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.22, ease: 'easeOut' }}
           className="relative mt-5 h-40 overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_rgba(239,230,216,0.8)_25%,_rgba(49,87,122,0.12)_100%)]"
         >
-          <div className="absolute right-3 top-3 h-10 w-10 rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.65)]" />
-          <ProjectVisual variant={currentVisual.variant} />
+          {image ? (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="h-full w-full object-cover"
+              style={{ objectPosition: image.objectPosition || 'center center' }}
+              priority={false}
+            />
+          ) : (
+            <>
+              <div className="absolute right-3 top-3 h-10 w-10 rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.65)]" />
+              <ProjectVisual variant={currentVisual.variant} />
+            </>
+          )}
           <div className="absolute inset-x-0 bottom-0 flex justify-between px-4 pb-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-500)]">
             <span>{currentVisual.label}</span>
             {period && <span>{period}</span>}
@@ -94,7 +119,7 @@ export default function ProjectCard({
           {title}
         </h3>
 
-        <p className="mt-4 text-base leading-7 text-[var(--color-charcoal)]/90">
+        <p className="mt-4 flex-1 text-base leading-7 text-[var(--color-charcoal)]/90">
           {description}
         </p>
 

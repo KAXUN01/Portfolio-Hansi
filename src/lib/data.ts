@@ -91,10 +91,10 @@ export const siteData = {
       featured: true,
       href: undefined,
       image: {
-        src: portfolioImages.project.src,
-        alt: 'Abstract project visual for online retail sales analysis',
-        width: portfolioImages.project.width,
-        height: portfolioImages.project.height,
+        src: '/images/online-retail-sales-analysis.png',
+        alt: 'Online retail sales analysis dashboard screenshot',
+        width: 1200,
+        height: 900,
         objectPosition: 'center center'
       }
     },
@@ -108,7 +108,14 @@ export const siteData = {
       period: 'Academic project',
       visual: 'distribution',
       featured: false,
-      href: undefined
+      href: undefined,
+      image: {
+        src: '/images/student-performance-analysis-1.png',
+        alt: 'Student performance analysis screenshot',
+        width: 1200,
+        height: 900,
+        objectPosition: 'center center'
+      }
     },
     {
       id: 3,
@@ -135,10 +142,10 @@ export const siteData = {
       featured: true,
       href: undefined,
       image: {
-        src: portfolioImages.dashboard.src,
-        alt: 'Abstract dashboard visual for coffee vending machine sales',
-        width: portfolioImages.dashboard.width,
-        height: portfolioImages.dashboard.height,
+        src: '/images/coffee-vending-machine-sales-dashboard.jpeg',
+        alt: 'Coffee vending machine sales dashboard screenshot',
+        width: 1200,
+        height: 900,
         objectPosition: 'center center'
       }
     },
