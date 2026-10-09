@@ -11,6 +11,12 @@ export default function About() {
 
   return (
     <SectionWrapper id="about" className="bg-[var(--color-ivory-50)]">
+      <div className="relative">
+        <svg className="absolute right-0 top-0 hidden h-28 w-52 md:block" viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M0 90 C 60 20, 110 18, 150 54 S 205 85, 220 45" fill="none" stroke="rgba(166,83,53,0.55)" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+
       <SectionHeading
         number={1}
         title="About"

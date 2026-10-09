@@ -75,8 +75,12 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="absolute -left-7 top-10 hidden h-28 w-28 rounded-full border border-[var(--color-line)] bg-[var(--color-ivory-100)] md:block" />
+          <div className="motif-block -left-6 top-3 hidden md:block" />
+          <div className="absolute -left-14 top-24 hidden h-24 w-24 rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.5)] md:block" />
           <div className="absolute -right-3 bottom-10 hidden h-20 w-20 rounded-full border border-[var(--color-line)] bg-[rgba(166,83,53,0.06)] md:block" />
+          <svg className="absolute -right-6 top-14 hidden h-32 w-32 md:block" viewBox="0 0 160 120" aria-hidden="true">
+            <path d="M6 86 C 28 30, 78 22, 112 44 S 152 78, 154 40" fill="none" stroke="rgba(23,43,77,0.28)" strokeWidth="2" strokeLinecap="round" />
+          </svg>
 
           <motion.div
             animate={{ y: [0, -8, 0] }}

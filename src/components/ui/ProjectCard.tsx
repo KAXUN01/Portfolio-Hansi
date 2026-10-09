@@ -38,7 +38,7 @@ export default function ProjectCard({
   const cardSize = featured ? 'lg:col-span-2' : ''
 
   return (
-    <article className={`group overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-white shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)] ${cardSize}`}>
+    <article className={`group overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)] ${cardSize}`}>
       <div className={`relative p-5 sm:p-6 ${featured ? 'sm:p-7' : ''}`}>
         <div className="flex items-center justify-between gap-4">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-navy-500)]">
@@ -49,7 +49,8 @@ export default function ProjectCard({
           </span>
         </div>
 
-        <div className="mt-5 h-40 overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_rgba(239,230,216,0.8)_25%,_rgba(49,87,122,0.12)_100%)]">
+        <div className="relative mt-5 h-40 overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_rgba(239,230,216,0.8)_25%,_rgba(49,87,122,0.12)_100%)]">
+          <div className="absolute right-3 top-3 h-10 w-10 rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.65)]" />
           <ProjectVisual variant={currentVisual.variant} />
           <div className="absolute inset-x-0 bottom-0 flex justify-between px-4 pb-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-500)]">
             <span>{currentVisual.label}</span>
