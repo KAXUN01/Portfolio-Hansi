@@ -31,7 +31,7 @@ export default function Hero() {
             initial={textInitial}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...textTransition, delay: prefersReducedMotion ? 0 : 0.08 }}
-            className="mt-5 text-[3.1rem] leading-[0.85] tracking-[-0.06em] text-[var(--color-navy-900)] sm:text-[4.3rem] lg:text-[6rem]"
+            className="mt-5 max-w-[10ch] text-[clamp(2.8rem,12vw,6rem)] leading-[0.82] tracking-[-0.06em] text-[var(--color-navy-900)]"
           >
             Turning data
             <br />

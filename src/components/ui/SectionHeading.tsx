@@ -21,7 +21,7 @@ export default function SectionHeading({
           </span>
           <span className="soft-divider w-10" />
         </div>
-        <h2 className="mt-4 text-4xl leading-none text-[var(--color-navy-900)] sm:text-5xl lg:text-6xl">
+        <h2 className="mt-4 text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] text-[var(--color-navy-900)]">
           {title}
         </h2>
         {subtitle && <p className="mt-4 max-w-xl text-base text-[var(--color-muted)]">{subtitle}</p>}

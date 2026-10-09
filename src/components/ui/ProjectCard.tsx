@@ -48,7 +48,7 @@ export default function ProjectCard({
       viewport={{ once: true, amount: 0.2 }}
       transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       whileHover={prefersReducedMotion ? undefined : { y: -4 }}
-      className={`group overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-shadow duration-200 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)] ${cardSize}`}
+      className={`group min-w-0 overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] shadow-[0_18px_45px_rgba(23,43,77,0.06)] transition-shadow duration-200 hover:shadow-[0_22px_55px_rgba(23,43,77,0.08)] ${cardSize}`}
     >
       <div className={`relative p-5 sm:p-6 ${featured ? 'sm:p-7' : ''}`}>
         <div className="flex items-center justify-between gap-4">

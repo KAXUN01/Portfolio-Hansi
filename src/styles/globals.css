@@ -20,6 +20,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body, #root {
@@ -27,6 +32,7 @@ html, body, #root {
 }
 
 body {
+  margin: 0;
   background: var(--color-paper);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
@@ -34,6 +40,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   background-image: radial-gradient(circle at top left, rgba(49,87,122,0.03), transparent 28%);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 img {
@@ -49,6 +57,16 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: var(--color-charcoal);
+  max-width: 100%;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -75,6 +93,7 @@ p {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  width: min(100%, 1200px);
 }
 
 .section-shell {
@@ -155,6 +174,13 @@ p {
 
 .muted {
   color: var(--color-muted);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
 }
 
 @media (min-width: 640px) {
