@@ -13,7 +13,8 @@ export const siteData = {
       degree: 'BM (Honours) in Business Analytics',
       institution: 'NSBM Green University',
       period: 'July 2024 – Present',
-      gpa: '3.41/4.00'
+      gpa: '3.41 / 4.00',
+      status: 'Current GPA'
     },
     {
       degree: 'Advanced Level – Commerce (CCS)',
@@ -22,13 +23,13 @@ export const siteData = {
     }
   ],
   certifications: [
-    { title: 'Fundamentals of Leadership', provider: 'Coursera', year: 2024 },
-    { title: 'Business Data Analytics: Strategies and Tools', provider: 'Alison', year: 2025 },
+    { title: 'Extension Course in English for Professionals', provider: 'University of Peradeniya', year: 2024 },
+    { title: 'Fundamentals of Leadership', provider: 'Coursera', year: 2025 },
     { title: 'Artificial Intelligence and Machine Learning in Business', provider: 'Alison', year: 2026 },
+    { title: 'Business Data Analytics: Strategies and Tools', provider: 'Alison', year: 2026 },
     { title: 'Artificial Intelligence in Project Management', provider: 'Alison', year: 2026 },
     { title: 'Introduction to Data Analytics with Python', provider: 'Alison', year: 2026 },
-    { title: 'Diploma in Applied Generative AI (Ongoing)', provider: 'Alison', year: 2026 },
-    { title: 'Power BI (Data Visualization)', provider: 'Alison', year: 2026 }
+    { title: 'Diploma in Applied Generative AI', provider: 'Alison', year: 'Ongoing', status: 'Ongoing' }
   ],
   projects: [
     { title: 'Online Retail Sales Analysis', stack: ['Python', 'Pandas'], description: 'Analyzed online retail data to identify revenue trends, top-selling products, and high-performing countries' },
