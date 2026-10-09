@@ -1,5 +1,6 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 
 export default function Navbar() {
   const links = [
@@ -12,6 +13,34 @@ export default function Navbar() {
   ]
 
   const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('about')
+  const prefersReducedMotion = useReducedMotion()
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (visibleEntry) {
+          const id = visibleEntry.target.id
+          setActiveSection(id)
+        }
+      },
+      {
+        rootMargin: '-30% 0px -45% 0px',
+        threshold: [0.2, 0.4, 0.6]
+      }
+    )
+
+    links.forEach(({ href }) => {
+      const section = document.querySelector(href)
+      if (section) observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4">
@@ -21,16 +50,29 @@ export default function Navbar() {
             Hansi Thennakoon
           </a>
 
-          <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-700)] transition-colors hover:text-[var(--color-terra-500)]"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav aria-label="Primary navigation" className="hidden items-center gap-2 md:flex">
+            {links.map((link) => {
+              const isActive = activeSection === link.href.replace('#', '')
+
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`relative rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
+                    isActive ? 'text-[var(--color-navy-900)]' : 'text-[var(--color-navy-700)] hover:text-[var(--color-terra-500)]'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNav"
+                      className="absolute inset-0 rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.7)]"
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.2, ease: 'easeOut' }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </a>
+              )
+            })}
           </nav>
 
           <div className="hidden md:block">
@@ -58,27 +100,35 @@ export default function Navbar() {
           </div>
         </div>
 
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile navigation"
-          className={`${open ? 'block' : 'hidden'} md:hidden`}
-        >
-          <div className="mt-3 rounded-[1.5rem] border border-[var(--color-line)] bg-white/95 p-4 shadow-[0_18px_40px_rgba(23,43,77,0.08)]">
-            <ul className="space-y-2">
-              {links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-700)] transition-colors hover:bg-[var(--color-ivory-50)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
+        <AnimatePresence>
+          {open && (
+            <motion.nav
+              id="mobile-nav"
+              aria-label="Mobile navigation"
+              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.22, ease: 'easeOut' }}
+              className="md:hidden"
+            >
+              <div className="mt-3 rounded-[1.5rem] border border-[var(--color-line)] bg-white/95 p-4 shadow-[0_18px_40px_rgba(23,43,77,0.08)]">
+                <ul className="space-y-2">
+                  {links.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-full px-3 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-700)] transition-colors hover:bg-[var(--color-ivory-50)]"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   )
