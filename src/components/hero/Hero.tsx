@@ -7,6 +7,8 @@ import SectionWrapper from '../layout/SectionWrapper'
 import Button from '../ui/Button'
 import Eyebrow from '../ui/Eyebrow'
 import ImageFrame from '../ui/ImageFrame'
+import { siteData } from '../../lib/data'
+import { imagePresets } from '../../lib/images'
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion()
@@ -100,48 +102,16 @@ export default function Hero() {
             transition={prefersReducedMotion ? undefined : { duration: 7, repeat: Infinity, ease: 'easeInOut' }}
             className="relative"
           >
-            <ImageFrame className="image-arch h-[500px] w-full border-[1.5px] border-[var(--color-line)] bg-[var(--color-ivory-100)] sm:h-[560px]">
-              <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_20%_20%,_rgba(255,255,255,0.85),_rgba(239,230,216,0.8)_25%,_rgba(33,70,109,0.18)_100%)] p-6 sm:p-8">
-                <div className="absolute inset-0 opacity-60">
-                  <svg viewBox="0 0 500 620" className="h-full w-full" preserveAspectRatio="none" aria-hidden="true">
-                    <g fill="none" stroke="rgba(23,43,77,0.20)" strokeWidth="1">
-                      <path d="M0 70L500 70M0 170L500 170M0 270L500 270M0 370L500 370M0 470L500 470" />
-                      <path d="M70 0V620M180 0V620M290 0V620M400 0V620" />
-                    </g>
-                    <path d="M30 420 C120 320, 180 350, 240 250 S380 140, 470 200" stroke="rgba(166,83,53,0.9)" strokeWidth="3" fill="none" strokeLinecap="round" />
-                    <g fill="rgba(23,43,77,0.9)">
-                      <circle cx="30" cy="420" r="5" />
-                      <circle cx="120" cy="320" r="5" />
-                      <circle cx="240" cy="250" r="5" />
-                      <circle cx="380" cy="140" r="5" />
-                      <circle cx="470" cy="200" r="5" />
-                    </g>
-                  </svg>
-                </div>
-
-                <div className="relative flex h-full flex-col justify-between">
-                  <div className="flex justify-between gap-4">
-                    <div className="rounded-full border border-[var(--color-line)] bg-white/80 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-navy-700)]">
-                      Hansi Thennakoon
-                    </div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-line)] bg-white/80 text-[var(--color-navy-900)]">
-                      <BarChart3 size={18} />
-                    </div>
-                  </div>
-
-                  <div className="max-w-[240px] self-end rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.72)] p-4 backdrop-blur-sm">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-navy-500)]">
-                      Insight
-                    </p>
-                    <p className="mt-3 font-display text-3xl leading-none text-[var(--color-navy-900)]">
-                      Data with
-                      <br />
-                      business context.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </ImageFrame>
+            <ImageFrame
+              src={siteData.heroImage.src}
+              alt={siteData.heroImage.alt}
+              width={siteData.heroImage.width}
+              height={siteData.heroImage.height}
+              priority={true}
+              sizes={imagePresets.profileHero.sizes}
+              objectPosition={siteData.heroImage.objectPosition || 'center center'}
+              className="image-arch aspect-[1134/1086] w-full border-[1.5px] border-[var(--color-line)] bg-[var(--color-ivory-100)]"
+            />
           </motion.div>
 
           <motion.div

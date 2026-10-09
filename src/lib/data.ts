@@ -1,4 +1,14 @@
+import { portfolioImages } from './images'
+
 type VisualVariant = 'trend' | 'distribution' | 'performance' | 'dashboard' | 'energy' | 'community'
+
+type ImageAsset = {
+  src: string
+  alt: string
+  width: number
+  height: number
+  objectPosition?: string
+}
 
 type ProjectEntry = {
   id: number
@@ -11,6 +21,7 @@ type ProjectEntry = {
   visual: VisualVariant
   featured?: boolean
   href?: string
+  image?: ImageAsset
 }
 
 export const siteData = {
@@ -23,6 +34,27 @@ export const siteData = {
     linkedIn: 'Hansi Tennakoon'
   },
   profileSummary: `Business Analytics undergraduate with a strong interest in data analysis, business intelligence, and data-driven decision-making. Developing practical skills in Python, R, Microsoft Excel, Tableau, and statistical analysis through academic projects. Seeking an internship to apply and further develop technical and analytical skills.`,
+  heroImage: {
+    src: portfolioImages.hero.src,
+    alt: portfolioImages.hero.alt,
+    width: portfolioImages.hero.width,
+    height: portfolioImages.hero.height,
+    objectPosition: portfolioImages.hero.objectPosition
+  },
+  aboutImage: {
+    src: portfolioImages.about.src,
+    alt: portfolioImages.about.alt,
+    width: portfolioImages.about.width,
+    height: portfolioImages.about.height,
+    objectPosition: portfolioImages.about.objectPosition
+  },
+  profileImage: {
+    src: portfolioImages.about.src,
+    alt: portfolioImages.about.alt,
+    width: portfolioImages.about.width,
+    height: portfolioImages.about.height,
+    objectPosition: portfolioImages.about.objectPosition
+  },
   education: [
     {
       degree: 'BM (Honours) in Business Analytics',
@@ -38,13 +70,13 @@ export const siteData = {
     }
   ],
   certifications: [
-    { title: 'Extension Course in English for Professionals', provider: 'University of Peradeniya', year: 2024 },
-    { title: 'Fundamentals of Leadership', provider: 'Coursera', year: 2025 },
-    { title: 'Artificial Intelligence and Machine Learning in Business', provider: 'Alison', year: 2026 },
-    { title: 'Business Data Analytics: Strategies and Tools', provider: 'Alison', year: 2026 },
-    { title: 'Artificial Intelligence in Project Management', provider: 'Alison', year: 2026 },
-    { title: 'Introduction to Data Analytics with Python', provider: 'Alison', year: 2026 },
-    { title: 'Diploma in Applied Generative AI', provider: 'Alison', year: 'Ongoing', status: 'Ongoing' }
+    { title: 'Extension Course in English for Professionals', provider: 'University of Peradeniya', year: 2024, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Fundamentals of Leadership', provider: 'Coursera', year: 2025, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Artificial Intelligence and Machine Learning in Business', provider: 'Alison', year: 2026, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Business Data Analytics: Strategies and Tools', provider: 'Alison', year: 2026, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Artificial Intelligence in Project Management', provider: 'Alison', year: 2026, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Introduction to Data Analytics with Python', provider: 'Alison', year: 2026, image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } },
+    { title: 'Diploma in Applied Generative AI', provider: 'Alison', year: 'Ongoing', status: 'Ongoing', image: { src: portfolioImages.certificate.src, alt: portfolioImages.certificate.alt, width: portfolioImages.certificate.width, height: portfolioImages.certificate.height } }
   ],
   projects: [
     {
@@ -57,7 +89,14 @@ export const siteData = {
       period: 'Academic project',
       visual: 'trend',
       featured: true,
-      href: undefined
+      href: undefined,
+      image: {
+        src: portfolioImages.project.src,
+        alt: 'Abstract project visual for online retail sales analysis',
+        width: portfolioImages.project.width,
+        height: portfolioImages.project.height,
+        objectPosition: 'center center'
+      }
     },
     {
       id: 2,
@@ -94,7 +133,14 @@ export const siteData = {
       period: 'Academic project',
       visual: 'dashboard',
       featured: true,
-      href: undefined
+      href: undefined,
+      image: {
+        src: portfolioImages.dashboard.src,
+        alt: 'Abstract dashboard visual for coffee vending machine sales',
+        width: portfolioImages.dashboard.width,
+        height: portfolioImages.dashboard.height,
+        objectPosition: 'center center'
+      }
     },
     {
       id: 5,

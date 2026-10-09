@@ -1,0 +1,25 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F2EFE8"/>
+  <rect x="60" y="60" width="1080" height="780" rx="24" fill="#FCFAF7" stroke="#21466D" stroke-opacity="0.15"/>
+  <rect x="120" y="120" width="220" height="120" rx="18" fill="#DDEBF7"/>
+  <rect x="390" y="120" width="220" height="120" rx="18" fill="#E7E0D2"/>
+  <rect x="660" y="120" width="220" height="120" rx="18" fill="#DDEBF7"/>
+  <rect x="930" y="120" width="150" height="120" rx="18" fill="#E7E0D2"/>
+  <path d="M120 420H1080" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M120 560H1080" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M120 700H1080" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M120 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M260 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M400 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M540 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M680 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M820 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M960 420V700" stroke="#21466D" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M120 760C220 660 300 640 420 630C540 620 640 560 750 520C850 482 980 438 1080 380" stroke="#A65335" stroke-width="5" stroke-linecap="round"/>
+  <rect x="160" y="440" width="80" height="220" rx="10" fill="#21466D" fill-opacity="0.15"/>
+  <rect x="330" y="490" width="80" height="170" rx="10" fill="#21466D" fill-opacity="0.2"/>
+  <rect x="500" y="470" width="80" height="190" rx="10" fill="#21466D" fill-opacity="0.3"/>
+  <rect x="670" y="515" width="80" height="145" rx="10" fill="#21466D" fill-opacity="0.25"/>
+  <rect x="840" y="480" width="80" height="180" rx="10" fill="#21466D" fill-opacity="0.3"/>
+  <rect x="1010" y="540" width="40" height="120" rx="10" fill="#21466D" fill-opacity="0.2"/>
+</svg>
