@@ -59,16 +59,7 @@ export default function About() {
             <Badge>Excel</Badge>
           </div>
 
-          <div className="border-t border-[var(--color-line)] pt-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-navy-500)]">
-              Currently
-            </p>
-            <div className="mt-4 space-y-2 text-base text-[var(--color-charcoal)]">
-              <p>{currentStudy.degree}</p>
-              <p>{currentStudy.institution}</p>
-              <p>GPA: {currentStudy.gpa}</p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </SectionWrapper>

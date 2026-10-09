@@ -17,8 +17,8 @@ export const portfolioImages = {
     objectPosition: 'center center'
   },
   about: {
-    src: '/images/profile-placeholder.svg',
-    alt: 'Abstract portrait placeholder for the about section',
+    src: '/images/about-portrait.jpg',
+    alt: 'Portrait of Hansi Thennakoon for the about section',
     width: 900,
     height: 1100,
     priority: true,

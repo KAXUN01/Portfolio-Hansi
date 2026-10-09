@@ -6,7 +6,7 @@ import SectionWrapper from '../layout/SectionWrapper'
 export default function Education() {
   return (
     <SectionWrapper id="education" className="bg-[var(--color-ivory-50)]">
-      <SectionHeading number={2} title="Education" subtitle="Academic foundations aligned with analytics, business thinking, and evidence-based learning." />
+      <SectionHeading number={2} title="Education" subtitle="Academic foundations aligned with business thinking and evidence-based learning." />
 
       <div className="relative mt-10 ml-0 md:ml-6">
         <div className="absolute left-[11px] top-4 bottom-4 w-px bg-[var(--color-line)]" />
