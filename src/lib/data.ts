@@ -135,8 +135,12 @@ export const siteData = {
     }
   ] as ProjectEntry[],
   community: [
-    { activity: 'A Book for Every Child', focus: 'SDG 10 — established mini-library at Kananwila Sugathapala Vidyalaya' },
-    { activity: 'Empower Her', focus: 'SDG 10 & SDG 12 — skill-development workshop for unemployed women' }
+    { activity: 'Games Captain of the House', focus: 'House leadership and team coordination' },
+    { activity: 'Senior Prefect of the School Committee', focus: 'School leadership and student representation' },
+    { activity: 'Senior Girl Guide', focus: 'Sri Lanka Girl Guide Association' },
+    { activity: 'School Chess Team', focus: 'Team participation and strategic thinking' },
+    { activity: 'School Table Tennis Team', focus: 'Team participation and discipline' },
+    { activity: 'NSBM Green University Sports Fiesta Badminton Team', focus: '2024, 2025' }
   ],
   skills: ['Python', 'R', 'SQL', 'Tableau', 'Power BI', 'Microsoft Excel', 'Microsoft Word', 'Microsoft PowerPoint', 'Canva']
 }

@@ -5,25 +5,34 @@ import SectionWrapper from '../layout/SectionWrapper'
 
 export default function Community() {
   return (
-    <SectionWrapper id="community">
-      <SectionHeading number={5} title="Community & Leadership" subtitle="Community impact and leadership experiences that show initiative beyond the classroom." />
+    <SectionWrapper id="community" className="bg-[var(--color-ivory-50)]">
+      <SectionHeading
+        number={5}
+        title="Beyond the Data"
+        subtitle="Leadership, discipline and collaboration beyond the classroom, shaped through school and university activities."
+      />
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
-        {siteData.community.map((item) => (
-          <article key={item.activity} className="editorial-card rounded-[2rem] p-6">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-navy-500)]">{item.focus}</p>
-            <h3 className="mt-4 text-2xl leading-tight text-[var(--color-navy-900)]">{item.activity}</h3>
-          </article>
-        ))}
+      <div className="relative mt-10 ml-0 md:ml-6">
+        <div className="absolute left-[11px] top-4 bottom-4 w-px bg-[var(--color-line)]" />
 
-        <article className="editorial-card rounded-[2rem] p-6">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-navy-500)]">Beyond academics</p>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-[var(--color-charcoal)]">
-            <li>Games Captain and Senior Prefect</li>
-            <li>Senior Girl Guide, chess and table tennis participation</li>
-            <li>Member of the NSBM Sports Fiesta Badminton Team (2024, 2025)</li>
-          </ul>
-        </article>
+        <div className="space-y-6">
+          {siteData.community.map((item) => (
+            <article key={item.activity} className="relative pl-10">
+              <span className="absolute left-0 top-3 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-navy-900)] bg-[var(--color-ivory-50)]">
+                <span className="h-2 w-2 rounded-full bg-[var(--color-terra-500)]" />
+              </span>
+
+              <div className="rounded-[1.5rem] border border-[var(--color-line)] bg-white/80 p-5 transition-transform duration-200 hover:-translate-y-0.5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-navy-500)]">
+                  {item.focus}
+                </p>
+                <h3 className="mt-3 text-xl leading-snug text-[var(--color-navy-900)] sm:text-2xl">
+                  {item.activity}
+                </h3>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   )

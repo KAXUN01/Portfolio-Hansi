@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowUpRight } from 'lucide-react'
+import ProjectVisual from './ProjectVisual'
 
 type ProjectCardProps = {
   number: string
@@ -14,30 +15,12 @@ type ProjectCardProps = {
 }
 
 const visualMap = {
-  trend: {
-    label: 'Trend analysis',
-    pattern: 'bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.9),rgba(239,230,216,0.8)_25%,rgba(49,87,122,0.18)_100%)]'
-  },
-  distribution: {
-    label: 'Distribution',
-    pattern: 'bg-[linear-gradient(135deg,rgba(23,43,77,0.08),rgba(166,83,53,0.10))]'
-  },
-  performance: {
-    label: 'Performance',
-    pattern: 'bg-[linear-gradient(135deg,rgba(49,87,122,0.10),rgba(255,255,255,0.8))]'
-  },
-  dashboard: {
-    label: 'Dashboard',
-    pattern: 'bg-[linear-gradient(135deg,rgba(23,43,77,0.05),rgba(166,83,53,0.08))]'
-  },
-  energy: {
-    label: 'Transition',
-    pattern: 'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),rgba(49,87,122,0.12)_40%,rgba(166,83,53,0.08)_100%)]'
-  },
-  community: {
-    label: 'Impact',
-    pattern: 'bg-[linear-gradient(135deg,rgba(23,43,77,0.04),rgba(255,255,255,0.8))]'
-  }
+  trend: { label: 'Trend analysis', variant: 'line' as const },
+  distribution: { label: 'Distribution', variant: 'points' as const },
+  performance: { label: 'Performance', variant: 'bars' as const },
+  dashboard: { label: 'Dashboard', variant: 'kpi' as const },
+  energy: { label: 'Transition', variant: 'grid' as const },
+  community: { label: 'Impact', variant: 'bars' as const }
 } as const
 
 export default function ProjectCard({
@@ -66,25 +49,11 @@ export default function ProjectCard({
           </span>
         </div>
 
-        <div className={`mt-5 h-40 overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] ${currentVisual.pattern}`}>
-          <div className="relative h-full w-full overflow-hidden">
-            <svg viewBox="0 0 800 300" className="h-full w-full" preserveAspectRatio="none" aria-hidden="true">
-              <g fill="none" stroke="rgba(23,43,77,0.18)" strokeWidth="1">
-                <path d="M0 70H800M0 150H800M0 230H800" />
-                <path d="M120 0V300M250 0V300M380 0V300M510 0V300M640 0V300" />
-              </g>
-              <path d="M20 200C130 160, 180 120, 270 150S410 180, 510 110S660 70, 780 110" stroke="rgba(166,83,53,0.9)" strokeWidth="3" fill="none" strokeLinecap="round" />
-              <g fill="rgba(23,43,77,0.8)">
-                <circle cx="20" cy="200" r="5" />
-                <circle cx="270" cy="150" r="5" />
-                <circle cx="510" cy="110" r="5" />
-                <circle cx="780" cy="110" r="5" />
-              </g>
-            </svg>
-            <div className="absolute inset-x-0 bottom-0 flex justify-between px-4 pb-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-500)]">
-              <span>{currentVisual.label}</span>
-              {period && <span>{period}</span>}
-            </div>
+        <div className="mt-5 h-40 overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_rgba(239,230,216,0.8)_25%,_rgba(49,87,122,0.12)_100%)]">
+          <ProjectVisual variant={currentVisual.variant} />
+          <div className="absolute inset-x-0 bottom-0 flex justify-between px-4 pb-3 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--color-navy-500)]">
+            <span>{currentVisual.label}</span>
+            {period && <span>{period}</span>}
           </div>
         </div>
 
